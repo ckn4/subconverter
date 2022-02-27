@@ -1,5 +1,5 @@
-FROM tindy2013/subconverter:0.7.1
-MAINTAINER Stille <stille@ioiox.com>
+FROM tindy2013/subconverter:latest
+MAINTAINER mikoto
 
 ENV VERSION 0.7.1
 
@@ -9,7 +9,7 @@ RUN apk add tzdata && \
     echo "Asia/Shanghai" > /etc/timezone && \
     apk del tzdata
 
-COPY groups.txt rulesets.txt /base/snippets/
+COPY pref.ini /base
 
 EXPOSE 25500
 
